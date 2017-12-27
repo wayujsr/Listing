@@ -4,14 +4,7 @@ import {NavLink} from 'react-router-dom';
 class Product extends React.Component{
 	constructor(){
 		super();
-		this.state = {'result':[{"id": "1",
-        "name": "Honda Accord Crosstour",
-        "year": "2010",
-        "model": "Accord Crosstour",
-        "make": "Honda",
-        "active":"true",
-        "media": "http://media.ed.edmunds-media.com/honda/accord-crosstour/2010/oem/2010_honda_accord-crosstour_4dr-hatchback_ex-l_fq_oem_4_500.jpg",
-        "price": "$16,811"}],
+		this.state = {'result':[],
 			searchByName: "",
 			searchByYear: "",
 			optionValue: "active",
@@ -22,7 +15,7 @@ class Product extends React.Component{
 		};
 	}
 	componentDidMount() {   
-		fetch('/data.json')
+		fetch('https://wayujsr.github.io/carPanel/data.json')
 		.then((response) =>
 			response.json()
 		  )
